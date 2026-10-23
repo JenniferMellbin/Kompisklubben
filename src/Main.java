@@ -10,7 +10,8 @@ public class Main {
             System.out.println("1. Lagg till medlem");
             System.out.println("2. Lista alla medlemmar");
             System.out.println("3. Sok medlem");
-            System.out.println("4. Avsluta");
+            System.out.println("4. Ta bort medlem");
+            System.out.println("5. Avsluta");
             System.out.print("Valj: ");
             String val = sc.nextLine();
 
@@ -31,8 +32,19 @@ if (val.equals("1")) {
     register.sokMedlem(sokNamn);
 
 } else if (val.equals("4")) {
+    System.out.print("Skriv namnet på den medlem du vill ta bort: ");
+    String bortNamn = sc.nextLine();
+    boolean bort = register.taBortMedlem(bortNamn);
+    if (bort) {
+        System.out.println(bortNamn + " har tagits bort från klubben.");
+    } else {
+        System.out.println("Hittade ingen medlem med namnet: " + bortNamn);
+    }
+
+} else if (val.equals("5")) {
     System.out.println("Avslutar...");
     break;
+
 } else {
     System.out.println("Fel val, forsok igen.");
 }

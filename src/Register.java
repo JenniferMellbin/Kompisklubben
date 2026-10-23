@@ -28,4 +28,13 @@ public void sokMedlem(String namn) {
     }
     System.out.println("Medlemmen " + namn + " saknas.");
 }
+    public boolean taBortMedlem(String namn) {
+        for (int i = 0; i < medlemmar.size(); i++) {
+            if (medlemmar.get(i).getNamn().equalsIgnoreCase(namn)) {
+                medlemmar.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 }
