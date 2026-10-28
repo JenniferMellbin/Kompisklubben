@@ -6,6 +6,16 @@ public class Register {
     private List<Medlem> medlemmar = new ArrayList<>();
 
     public void laggTillMedlem(Medlem medlem) {
+
+        for (Medlem m : medlemmar) {
+            if (m.getMedlemsnummer() == medlem.getMedlemsnummer()) {
+                System.out.println("Fel! Medlemsnummer "
+                        + medlem.getMedlemsnummer()
+                        + " finns redan i registret.");
+                return;
+            }
+        }
+
         medlemmar.add(medlem);
         System.out.println("Medlem tillagd: " + medlem.getNamn());
     }
