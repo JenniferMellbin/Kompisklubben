@@ -28,11 +28,15 @@ public class Main {
 
             } else if (val.equals("2")) {
                 register.listaMedlemmar();
+                System.out.println("\n--- Tryck Enter för att fortsätta ---");
+                sc.nextLine();
 
             } else if (val.equals("3")) {
                 System.out.print("Sok namn: ");
                 String sokNamn = sc.nextLine();
                 register.sokMedlem(sokNamn);
+                System.out.println("\n--- Tryck Enter... ---");
+                sc.nextLine();
 
             } else if (val.equals("4")) {
                 System.out.print("Skriv namnet på den medlem du vill ta bort: ");
@@ -46,9 +50,13 @@ public class Main {
 
             } else if (val.equals("5")) {
                 register.visaAntalMedlemmar();
+                System.out.println("\n--- Tryck Enter för att fortsätta ---");
+                sc.nextLine();
 
             } else if (val.equals("6")) {
                     register.visaStatistik();
+                    System.out.println("\n--- Tryck Enter för att fortsätta ---");
+                    sc.nextLine();
 
             } else if (val.equals("7")) {
                 System.out.print("Namn: ");
