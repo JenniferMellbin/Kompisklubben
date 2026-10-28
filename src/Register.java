@@ -81,4 +81,15 @@ public class Register {
         }
 
     }
-}
+    public void visaStatistik() {
+        System.out.println("Totalt: " + medlemmar.size());
+        int premium = 0;
+        for (Medlem m : medlemmar) {
+            if (m.isPremium()) premium++;
+        }
+
+        System.out.println("Premium: " + premium);
+        System.out.println("Vanliga: " + (medlemmar.size() - premium));
+
+        }
+    }

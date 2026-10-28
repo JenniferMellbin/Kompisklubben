@@ -12,8 +12,9 @@ public class Main {
             System.out.println("3. Sok medlem");
             System.out.println("4. Ta bort medlem");
             System.out.println("5. Visa antal medlemmar");
-            System.out.println("6. Lägg till Premium-medlem");
-            System.out.println("7. Avsluta");
+            System.out.println("6. Visa statistik");
+            System.out.println("7. Lägg till Premium-medlem");
+            System.out.println("8. Avsluta");
             System.out.print("Valj: ");
             String val = sc.nextLine();
 
@@ -47,6 +48,9 @@ public class Main {
                 register.visaAntalMedlemmar();
 
             } else if (val.equals("6")) {
+                    register.visaStatistik();
+
+            } else if (val.equals("7")) {
                 System.out.print("Namn: ");
                 String namn = sc.nextLine();
 
@@ -58,7 +62,7 @@ public class Main {
 
                 register.laggTillMedlem(ny);
 
-            } else if (val.equals("7")) {
+            } else if (val.equals("8")) {
                 System.out.println("Avslutar...");
                 break;
 
