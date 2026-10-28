@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Comparator;
 
 public class Register {
 
@@ -24,23 +25,19 @@ public class Register {
         if (medlemmar.isEmpty()) {
             System.out.println("Inga medlemmar i registret.");
         } else {
+            medlemmar.sort(Comparator.comparing(Medlem::getNamn, String.CASE_INSENSITIVE_ORDER));
+
             System.out.println("--- Medlemslista ---");
 
             for (Medlem m : medlemmar) {
-                String typ;
-
-                if (m.isPremium()) {
-                    typ = "Premium-medlem";
-                } else {
-                    typ = "Vanlig medlem";
-                }
-
                 System.out.println("Namn: " + m.getNamn()
-                        + ", Medlemsnummer: " + m.getMedlemsnummer()
-                        + ", Typ: " + typ);
+                        + ", Medlemsnummer: " + m.getMedlemsnummer());
             }
         }
     }
+
+
+
 
     public void sokMedlem(String namn) {
         for (Medlem m : medlemmar) {
