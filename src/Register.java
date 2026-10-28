@@ -25,8 +25,19 @@ public class Register {
             System.out.println("Inga medlemmar i registret.");
         } else {
             System.out.println("--- Medlemslista ---");
+
             for (Medlem m : medlemmar) {
-                System.out.println("Namn: " + m.getNamn() + ", Medlemsnummer: " + m.getMedlemsnummer());
+                String typ;
+
+                if (m.isPremium()) {
+                    typ = "Premium-medlem";
+                } else {
+                    typ = "Vanlig medlem";
+                }
+
+                System.out.println("Namn: " + m.getNamn()
+                        + ", Medlemsnummer: " + m.getMedlemsnummer()
+                        + ", Typ: " + typ);
             }
         }
     }
@@ -34,10 +45,22 @@ public class Register {
     public void sokMedlem(String namn) {
         for (Medlem m : medlemmar) {
             if (m.getNamn().equalsIgnoreCase(namn)) {
-                System.out.println("Hittad: Namn: " + m.getNamn() + ", Medlemsnummer: " + m.getMedlemsnummer());
+
+                String typ;
+
+                if (m.isPremium()) {
+                    typ = "Premium-medlem";
+                } else {
+                    typ = "Vanlig medlem";
+                }
+
+                System.out.println("Hittad: Namn: " + m.getNamn()
+                        + ", Medlemsnummer: " + m.getMedlemsnummer()
+                        + ", Typ: " + typ);
                 return;
             }
         }
+
         System.out.println("Medlemmen " + namn + " saknas.");
     }
 
